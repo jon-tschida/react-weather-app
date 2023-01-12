@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap');
+/*font-family: 'Lato', sans-serif; */
 *{
   margin: 0px;
   padding: 0px;
@@ -7,3 +9,66 @@
 body{
   background-color: #83accb;
 }
+
+/* Header styling */
+.header-container{
+  margin-top: 5%;
+  display: flex;
+  justify-content: center;
+}
+
+.header-form-div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.time{
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 5rem;
+}
+.date{
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+  font-size: 3rem;
+  font-weight: 300;
+}
+
+/* End header styling */
+
+/* Form styling */
+form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 25px;
+}
+form > input{
+  border: none;
+  border-radius: 5px;
+  width: 80%;
+  margin: auto;
+  height: 2rem;
+  padding: 10px;
+  box-shadow: 0px 0px 5px black;
+  transition: box-shadow 250ms ease-in-out;
+  margin-bottom: 15px;
+}
+
+form > input:focus{
+  outline: none;
+  box-shadow: 0px 0px 5px green;
+  transition: box-shadow 250ms ease-in-out;
+}
+form > button{
+  width: 30%;
+  margin: auto;
+  cursor: pointer;
+  height: 2rem;
+  font-family: 'Lato', sans-serif;
+  
+}
+
+/* End Form Styling */
