@@ -71,4 +71,12 @@ form > button{
   
 }
 
+.button-searching{
+  width: 30%;
+  margin: auto;
+  cursor: wait;
+  height: 2rem;
+  font-family: 'Lato', sans-serif;
+}
+
 /* End Form Styling */
