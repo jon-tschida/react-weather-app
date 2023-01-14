@@ -6,12 +6,17 @@ import Header from './components/Header';
 //
 
 
-const formatInput = (text) => text.replace(/ /g, "%");
-
 export default function App() {
+  const [locationData, setLocationData] = React.useState()
+  const [loading, setLoading] = React.useState(true)
+  // const [weatherData, setWeatherData] = React.useState()
+  loading ? console.log(`no location data`): console.log(locationData)
+
+
   return (
     <div>
-      <Header />
+      <Header setLocationData={setLocationData} setLoading={setLoading} locationData={locationData} loading={loading}/> 
+      <h2>{loading ? "Search for a city" : locationData.locations[0].referencePosition.latitude.toFixed(5)}</h2>
     </div>
   );
 }

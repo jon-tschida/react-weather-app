@@ -19,6 +19,9 @@ const formatAMPM = (date) => {
     weekday: `short`,
   };
 
+  // formating our user input, replacing spaces with % for our API call. 
+  const formatInput = (text) => text.replace(/ /g, "%");
+
 export default function Header(props) {
 
     const [formData, setFormData] = React.useState("")
@@ -36,6 +39,19 @@ export default function Header(props) {
     const handleChange = (event) => {
         setFormData(event.target.value)
     }
+
+    const handleSubmit = (e) =>{
+        e.preventDefault();
+
+        async function fetchData() {
+            const response = await fetch(`https://api.myptv.com/geocoding/v1/locations/by-text?searchText=${formatInput(formData)}&apiKey=NDVkZjZlYTFmNWMzNGEyZmIzNzMwMzNkNjkxMDRjMjQ6ZTM5OGNmOGItY2ZlNS00N2ZmLTg5YTAtZGUxMjE2ODMxMDc3`);
+            const json = await response.json();
+            props.setLocationData(json)
+            props.setLoading(false)
+        }
+        fetchData();
+
+    }
     
     const formatDay = new Intl.DateTimeFormat(`en-US`, dayOptions).format(
         curDate
@@ -49,11 +65,17 @@ export default function Header(props) {
                 <p className="time">{formatAMPM(curTime)}</p>
                 <p className="date">{formatDay}</p>
             </div>
-
-            <form>
-                <input type="text" placeholder='Duluth MN' onChange={handleChange} value={formData}></input>
-                <button type='submit'>Search</button>
-            </form>
+            {props.loading 
+            ? 
+                <form onSubmit={handleSubmit}>
+                    <input type="text" placeholder='Duluth MN' onChange={handleChange} value={formData}></input>
+                    <button type='submit'>Search</button>
+                </form>
+            :
+                <p className='date'>
+                {props.locationData.locations[0].formattedAddress}
+                </p>
+            }
         </div>
     </div>
   )
