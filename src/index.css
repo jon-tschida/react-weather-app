@@ -7,7 +7,13 @@
 }
 
 body{
-  background-color: #83accb;
+  background-color: #fafafa;
+}
+hr{
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
 }
 
 /* Header styling */
@@ -23,13 +29,7 @@ body{
   justify-content: center;
 }
 
-.time{
-  text-align: center;
-  font-family: 'Lato', sans-serif;
-  font-weight: 300;
-  font-size: 5rem;
-}
-.date{
+.location{
   text-align: center;
   font-family: 'Lato', sans-serif;
   font-size: 3rem;
@@ -80,3 +80,61 @@ form > button{
 }
 
 /* End Form Styling */
+
+/* Weather info styling */
+
+.weather-container{
+ padding: 1%;
+ background-color: #ffffff;
+ border-radius: 15px;
+ box-shadow: 0px 0px 10px #4d4d4d;
+
+ width: fit-content;
+ margin: auto;
+}
+
+.weather-container-header-container{
+  display: flex;
+  flex-direction: column;
+}
+.weather-container-header{
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+  font-size: 3rem;
+  font-weight: 300;
+}
+
+.weather-header-icon{
+ width: 50%;
+ margin: auto;
+ border-radius: 50%;
+}
+
+.weather-main-temp{
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+  font-size: 3rem;
+  font-weight: 300;
+}
+
+.weather-main-description{
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 300;
+}
+
+.weather-info{
+  padding: 0px 10px 0px 10px;
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+  font-size: 2rem;
+  font-weight: 400;
+
+  justify-content: space-around;
+}
+.weather-info-row{
+  display: flex;
+  justify-content: space-between;
+}
+/* End Weather info styling */
