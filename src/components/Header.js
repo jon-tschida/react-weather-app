@@ -1,5 +1,6 @@
 import React from 'react'
 
+
   // formating our user input, replacing spaces with % for our API call. 
   const formatInput = (text) => text.replace(/ /g, "%");
 
@@ -38,10 +39,13 @@ export default function Header(props) {
             ? 
                 null
             :
+            <div>
+                <p className='weather-container-header'></p>
                 <form onSubmit={handleSubmit}>
-                    <input type="text" placeholder='Duluth MN' onChange={handleChange} value={formData}></input>
-                    {loading ? <button className="button-searching" type='submit'>Searching...</button> : <button type='submit'>Search</button>}
+                    <input type="text" placeholder='Duluth MN' onChange={handleChange} value={formData} />
+                    {loading ? <img src={require("../images/loading.png")} className="search-loading"/> : <button type='submit' className='material-symbols-outlined'>search</button>}
                 </form>
+            </div>
             }
         </div>
     </div>

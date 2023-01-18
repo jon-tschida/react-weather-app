@@ -12,6 +12,9 @@ export default function App() {
   const [loaded, setLoaded] = React.useState(false)
   const [weatherData, setWeatherData] = React.useState()
   const [loadingWeatherData, setLoadingWeatherData] = React.useState(true);
+
+  const [loadingDailyWeatherData, setLoadingDailyWeatherData] = React.useState(true)
+  const [dailyWeatherData, setDailyWeatherData] = React.useState()
   
   
   // API call function, bascially copy pasted into our Header as well, using the lat and long from our location api to get weather for that location. 
@@ -23,6 +26,15 @@ export default function App() {
     setLoadingWeatherData(false);
   }
   // End API call function
+
+  //API call for our daily weather
+  async function fetchDailyWeatherData() {
+    setLoadingDailyWeatherData(true);
+    const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${locationData.locations[0].referencePosition.latitude.toFixed(5)}&lon=${locationData.locations[0].referencePosition.longitude.toFixed(5)}&units=imperial&appid=2a8ab662e8539e2cb45726e6080084e6`);
+    const json = await response.json();
+    setDailyWeatherData(json);
+    setLoadingDailyWeatherData(false);
+  }
   
   
   // UseEffect with loaded in the dependancy array 
@@ -30,6 +42,7 @@ export default function App() {
 
       if(loaded) {
         fetchWeatherData();
+        fetchDailyWeatherData();
       }   
   }, [loaded])
 
@@ -39,7 +52,7 @@ export default function App() {
   return (
     <div>
       <Header setLocationData={setLocationData} setLoaded={setLoaded} locationData={locationData} loaded={loaded}/> 
-      <h2> { loadingWeatherData ? "Search for a city" : <Weather weatherData={weatherData} locationData={locationData}/> } </h2> 
+      <h2> { loadingWeatherData ? null : <Weather weatherData={weatherData} locationData={locationData} dailyWeatherData={dailyWeatherData}/> } </h2> 
     </div>
   );
 }

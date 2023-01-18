@@ -9,16 +9,37 @@
 body{
   background-color: #fafafa;
 }
-hr{
-  margin-top: 5px;
-  margin-bottom: 5px;
-  border: 1px solid rgba(0, 0, 0, 0.5);
-  border-radius: 50%;
+.divider{
+border: 1px solid black;
+height: 15rem;
+border-radius: 50%;
+margin: 0px 15px 0px 15px;
+}
+
+.search-loading{
+  animation: rotation 1s infinite linear;
+  width: 30px;
+  margin-right: 10px;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  40%{
+    transform: rotate(90deg);
+  }
+  75%{
+    transform: rotate(320deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
 }
 
 /* Header styling */
 .header-container{
-  margin-top: 5%;
+  margin-top: 3%;
   display: flex;
   justify-content: center;
 }
@@ -27,13 +48,7 @@ hr{
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
-
-.location{
-  text-align: center;
-  font-family: 'Lato', sans-serif;
-  font-size: 3rem;
-  font-weight: 300;
+  width: 80%;
 }
 
 /* End header styling */
@@ -41,100 +56,125 @@ hr{
 /* Form styling */
 form{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
   justify-content: center;
-  padding-top: 25px;
+  width: 30%;
+  height: 120%;
+  margin: auto;
+  background-color: white;
+
+  box-shadow: 0px 0px 5px #4d4d4d;
+  border-radius: 20px;
+  padding: 5px;
 }
 form > input{
+  font-size: 20px;
   border: none;
-  border-radius: 5px;
-  width: 80%;
+  width: 100%;
   margin: auto;
   height: 2rem;
   padding: 10px;
-  box-shadow: 0px 0px 5px black;
-  transition: box-shadow 250ms ease-in-out;
-  margin-bottom: 15px;
 }
 
 form > input:focus{
   outline: none;
-  box-shadow: 0px 0px 5px green;
-  transition: box-shadow 250ms ease-in-out;
 }
 form > button{
-  width: 30%;
-  margin: auto;
+  width: 40%;
   cursor: pointer;
   height: 2rem;
   font-family: 'Lato', sans-serif;
-  
-}
-
-.button-searching{
-  width: 30%;
-  margin: auto;
-  cursor: wait;
-  height: 2rem;
-  font-family: 'Lato', sans-serif;
+  border-radius: 5px;
+  margin-left: 5px;
+  border: none;
 }
 
 /* End Form Styling */
 
 /* Weather info styling */
 
-.weather-container{
+.whole-weather-container{
  padding: 1%;
  background-color: #ffffff;
  border-radius: 15px;
  box-shadow: 0px 0px 10px #4d4d4d;
 
- width: fit-content;
+ width: 30%;
+ height: 300px;
  margin: auto;
+ display: flex;
+ align-items: center;
+ justify-content: space-around;
 }
 
 .weather-container-header-container{
+  width: 250px;
+  height: 100%;
   display: flex;
   flex-direction: column;
 }
 .weather-container-header{
   text-align: center;
   font-family: 'Lato', sans-serif;
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 300;
 }
 
 .weather-header-icon{
  width: 50%;
  margin: auto;
- border-radius: 50%;
+ max-width: fit-content;
+}
+
+.high-low-main-temp-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
 }
 
 .weather-main-temp{
   text-align: center;
   font-family: 'Lato', sans-serif;
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 300;
+}
+
+.weather-min-high{
+  text-align: center;
+  font-size: 1rem;
 }
 
 .weather-main-description{
   text-align: center;
   font-family: 'Lato', sans-serif;
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 300;
 }
 
 .weather-info{
-  padding: 0px 10px 0px 10px;
+  display: flex;
+  align-items: center;
+  
   text-align: center;
   font-family: 'Lato', sans-serif;
-  font-size: 2rem;
-  font-weight: 400;
+  font-size: 1.5rem;
+  font-weight: 300;
+  
+  width: 250px;
+  height: 100%;
+}
 
-  justify-content: space-around;
+.weather-info-row-container{
+  width: 100%;
+  height: fit-content;
 }
 .weather-info-row{
   display: flex;
   justify-content: space-between;
 }
 /* End Weather info styling */
+
