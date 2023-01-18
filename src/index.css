@@ -176,5 +176,44 @@ form > button{
   display: flex;
   justify-content: space-between;
 }
+
 /* End Weather info styling */
 
+/* Hourly Weather */
+.hourly-weather-container{
+  padding: 5%;
+  width: 70%;
+  display: flex;
+  margin: auto;
+  justify-content: space-evenly;
+  user-select: none;
+}
+.hourly-weather{
+  box-shadow: 0px 0px 5px black;
+  width: 100px;
+  border-radius: 25px;
+  padding: 1%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Lato', sans-serif;
+  background-color: #ffffff;
+}
+
+.hourly-day{
+  font-weight: 600;
+}
+
+.hourly-temp-desc{
+  font-weight: 400;
+}
+
+.daily-weather-icon{
+  border: 1px black;
+  border-style: outset;
+  border-radius: 50%;
+  background-color: rgba(202, 202, 202, 0.5);
+}
+
+/* End Hourly Weather */

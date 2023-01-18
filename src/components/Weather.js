@@ -1,13 +1,23 @@
 import React from 'react'
+import Daily from './Daily';
+
+function formatAMPM(date) {
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+    var ampm = hours >= 12 ? "pm" : "am";
+    hours = hours % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+    minutes = minutes < 10 ? "0" + minutes : minutes;
+    var strTime = hours + ":" + minutes + " " + ampm;
+    return strTime;
+  }
 
 export default function Weather(props) {
 
-    const {weatherData, locationData, dailyWeatherData} = props;
+    const {weatherData, locationData, dailyWeatherData, loadingDailyWeatherData} = props;
 
     // Simple capitalize function
     const capitalize = (text) => text.replace(text[0], text[0].toUpperCase())
-
-    console.log(dailyWeatherData)
   
     return (
     <div>
@@ -34,14 +44,28 @@ export default function Weather(props) {
                     </div>
                     <div className='weather-info-row'>
                         <p>Wind</p> 
-                        <p>{Math.round(weatherData.wind.speed)} MPH</p>
+                        <p>{Math.round(weatherData.wind.speed)} mph <img style={{maxHeight: `15px`, transform: `rotate(${Math.round(weatherData.wind.deg)}deg)`}} src={require("../images/arrow.png")} /></p>
                     </div>
                     <div className='weather-info-row'>
                         <p>Clouds</p> 
                         <p>{Math.round(weatherData.clouds.all)}%</p>
                     </div>
+                    <div className='weather-info-row'>
+                        <p>Sunrise</p> 
+                        <p>{`${formatAMPM (new Date(weatherData.sys.sunrise * 1000))}`}</p>
+                    </div>
+                    <div className='weather-info-row'>
+                        <p>Sunset</p> 
+                        <p>{`${formatAMPM (new Date(weatherData.sys.sunset * 1000))}`}</p>
+                    </div>
+
+
                 </div>
             </div>
+        </div>
+
+        <div>
+            {loadingDailyWeatherData ? null : <Daily dailyWeatherData={dailyWeatherData}/>}
         </div>
     </div>
   )
