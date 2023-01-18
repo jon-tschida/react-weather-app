@@ -81,12 +81,11 @@ form > input:focus{
   outline: none;
 }
 form > button{
-  width: 40%;
+  border-radius: 5px;
   cursor: pointer;
   height: 2rem;
   font-family: 'Lato', sans-serif;
-  border-radius: 5px;
-  margin-left: 5px;
+  margin-right: 10px;
   border: none;
 }
 
@@ -179,16 +178,18 @@ form > button{
 
 /* End Weather info styling */
 
-/* Hourly Weather */
-.hourly-weather-container{
-  padding: 5%;
-  width: 70%;
+/* daily Weather */
+.daily-weather-container{
+  position: absolute;
+  right: 20%;
+
+  width: 60%;
   display: flex;
   margin: auto;
   justify-content: space-evenly;
   user-select: none;
 }
-.hourly-weather{
+.daily-weather{
   box-shadow: 0px 0px 5px black;
   width: 100px;
   border-radius: 25px;
@@ -196,16 +197,15 @@ form > button{
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   font-family: 'Lato', sans-serif;
   background-color: #ffffff;
 }
 
-.hourly-day{
+.daily-day{
   font-weight: 600;
 }
 
-.hourly-temp-desc{
+.daily-temp-desc{
   font-weight: 400;
 }
 
@@ -214,6 +214,63 @@ form > button{
   border-style: outset;
   border-radius: 50%;
   background-color: rgba(202, 202, 202, 0.5);
+  max-width: 50px;
+}
+
+/* End daily Weather */
+
+/* Hourly Weather */
+
+.hourly-weather-container{
+  padding-top: 2%;
+  width: 50%;
+  height: 200px;
+  display: flex;
+  margin: auto;
+  justify-content: space-evenly;
+  user-select: none;
+}
+.hourly-weather{
+  box-shadow: 0px 0px 5px black;
+  width: 100px;
+  height: fit-content;
+  border-radius: 25px;
+  padding: 1%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Lato', sans-serif;
+  background-color: #ffffff;
+
+  cursor: pointer;
+  transition: transform 150ms ease-in-out;
+}
+
+.hourly-weather:hover{
+  transform: scale(1.1, 1.1);
+  transition: transform 150ms ease-in-out;
+}
+
+.hour{
+  font-weight: 300;
+  font-size: 15px;
+}
+
+.hourly-temp-desc{
+  font-weight: 300;
+}
+
+.hourly-temp{
+  font-weight: 400;
+}
+
+.hourly-weather-icon{
+  border: 1px black;
+  border-style: outset;
+  border-radius: 50%;
+  background-color: rgba(202, 202, 202, 0.5);
+  max-width: 50px;
 }
 
 /* End Hourly Weather */

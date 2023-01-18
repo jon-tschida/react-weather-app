@@ -1,5 +1,6 @@
 import React from 'react'
 import Daily from './Daily';
+import Hourly from './Hourly';
 
 function formatAMPM(date) {
     var hours = date.getHours();
@@ -62,7 +63,10 @@ export default function Weather(props) {
 
                 </div>
             </div>
+
+
         </div>
+        {loadingDailyWeatherData ? null : <Hourly dailyWeatherData={dailyWeatherData} formatAMPM={formatAMPM}/>}
 
         <div>
             {loadingDailyWeatherData ? null : <Daily dailyWeatherData={dailyWeatherData}/>}
