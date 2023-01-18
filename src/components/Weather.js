@@ -24,7 +24,7 @@ export default function Weather(props) {
     <div>
         <div className='whole-weather-container'>
             <div className='weather-container-header-container'>
-                <h1 className='weather-container-header'>{locationData.locations[0].formattedAddress}</h1>
+                <h1 className={`${locationData.locations[0].formattedAddress.length > 12 ? 'weather-container-header-small' : 'weather-container-header'}`}>{locationData.locations[0].formattedAddress}</h1>
                 <img className='weather-header-icon' src={`http://openweathermap.org/img/wn/${weatherData.weather[0].icon}@4x.png`} />
                 <div className='high-low-main-temp-container'>
                     <p className='weather-main-temp'>{Math.round(weatherData.main.temp)}°</p>
