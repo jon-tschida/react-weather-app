@@ -66,11 +66,11 @@ export default function Weather(props) {
 
 
         </div>
-        {loadingDailyWeatherData ? null : <Hourly dailyWeatherData={dailyWeatherData} formatAMPM={formatAMPM}/>}
 
-        <div>
-            {loadingDailyWeatherData ? null : <Daily dailyWeatherData={dailyWeatherData}/>}
-        </div>
+        {loadingDailyWeatherData ? null : <Hourly dailyWeatherData={dailyWeatherData} formatAMPM={formatAMPM} capitalize={capitalize}/>}
+
+        {loadingDailyWeatherData ? null : <Daily dailyWeatherData={dailyWeatherData} formatAMPM={formatAMPM} capitalize={capitalize}/>}
+
     </div>
   )
 }

@@ -100,7 +100,6 @@ form > button{
  box-shadow: 0px 0px 10px #4d4d4d;
 
  width: 30%;
- /* height: 300px; */
  height: fit-content;
  margin: auto;
  display: flex;
@@ -187,18 +186,20 @@ form > button{
 
 /* daily Weather */
 .daily-weather-container{
-  position: absolute;
-  right: 20%;
-
+  /* position: fixed; */
+  /* right: 20%; */
+  margin: auto;
+  margin-top: 1%;
   width: 60%;
   display: flex;
-  margin: auto;
   justify-content: space-evenly;
   user-select: none;
+  height: 150px;
 }
 .daily-weather{
   box-shadow: 0px 0px 5px black;
   width: 100px;
+  height: fit-content;
   border-radius: 25px;
   padding: 1%;
   display: flex;
@@ -206,14 +207,20 @@ form > button{
   align-items: center;
   font-family: 'Lato', sans-serif;
   background-color: #ffffff;
+  transition: transform 150ms ease-in-out;
 }
-
+.daily-weather:hover{
+  cursor: pointer;
+  transform: scale(1.1, 1.1);
+  transition: transform 150ms ease-in-out;
+}
 .daily-day{
   font-weight: 600;
 }
 
 .daily-temp-desc{
   font-weight: 400;
+  text-align: center;
 }
 
 .daily-weather-icon{
@@ -222,6 +229,25 @@ form > button{
   border-radius: 50%;
   background-color: rgba(202, 202, 202, 0.5);
   max-width: 50px;
+}
+
+.daily-sunrise-sunset-icon{
+  width: 15px;
+}
+
+.daily-sunrise-sunset-time{
+  font-size: 15px;
+}
+
+.daily-more-info-row-container{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.daily-more-info-row{
+  display: flex;
+  justify-content: space-between;
 }
 
 /* End daily Weather */
@@ -266,6 +292,8 @@ form > button{
 
 .hourly-temp-desc{
   font-weight: 300;
+  font-size: 18px;
+  text-align: center;
 }
 
 .hourly-temp{

@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Hourly(props) {
 
-    const {dailyWeatherData, formatAMPM} = props;
+    const {dailyWeatherData, formatAMPM, capitalize} = props;
 
     const [clicked, setClicked] = React.useState({
         1: false,
@@ -34,7 +34,7 @@ export default function Hourly(props) {
                         { clicked[index] &&
                         <>
                             <img className='hourly-weather-icon' src={`http://openweathermap.org/img/wn/${el.weather[0].icon}.png`} />
-                            <p className='hourly-temp-desc'>{el.weather[0].main}</p>
+                            <p className='hourly-temp-desc'>{capitalize(el.weather[0].description)}</p>
                         </>
                         }
                         <p className='hourly-temp'>{Math.round(el.temp)}°</p>

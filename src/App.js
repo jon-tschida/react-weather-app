@@ -53,7 +53,7 @@ export default function App() {
   return (
     <div>
       <Header setLocationData={setLocationData} setLoaded={setLoaded} locationData={locationData} loaded={loaded}/> 
-      <h2> {loadingWeatherData ? null : <Weather weatherData={weatherData} locationData={locationData} dailyWeatherData={dailyWeatherData} loadingDailyWeatherData={loadingDailyWeatherData}/> } </h2> 
+      <div> {loadingWeatherData ? null : <Weather weatherData={weatherData} locationData={locationData} dailyWeatherData={dailyWeatherData} loadingDailyWeatherData={loadingDailyWeatherData}/> } </div> 
     </div>
   );
 }
