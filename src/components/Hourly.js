@@ -34,7 +34,7 @@ export default function Hourly(props) {
                     
                         { clicked[index] &&
                         <>
-                            <img className='hourly-weather-icon' alt='weather icon' src={`http://openweathermap.org/img/wn/${el.weather[0].icon}.png`} />
+                            <img className='daily-weather-icon' alt='weather icon' src={`http://openweathermap.org/img/wn/${el.weather[0].icon}.png`} />
                             <p className='hourly-temp-desc'>{capitalize(el.weather[0].description)}</p>
                         
                         {/* Conditionally rendering snow and rain fall. These only populate if snow or rain are forecasted.

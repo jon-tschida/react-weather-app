@@ -224,10 +224,10 @@ form > button{
 }
 
 .daily-weather-icon{
-  border: 1px black;
+  /* border: 1px black; */
   border-style: outset;
   border-radius: 50%;
-  background-color: rgba(202, 202, 202, 0.5);
+  background-color: rgba(0, 0, 0, 0.2);
   max-width: 50px;
 }
 
@@ -300,12 +300,5 @@ form > button{
   font-weight: 400;
 }
 
-.hourly-weather-icon{
-  border: 1px black;
-  border-style: outset;
-  border-radius: 50%;
-  background-color: rgba(202, 202, 202, 0.5);
-  max-width: 50px;
-}
 
 /* End Hourly Weather */
