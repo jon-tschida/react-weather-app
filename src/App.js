@@ -23,7 +23,6 @@ export default function App() {
     const json = await response.json();
     setWeatherData(json);
     setLoadingWeatherData(false);
-    console.log(`TODAYS WEATHER API CALLED!`)
   }
   // End API call function
 
@@ -34,7 +33,6 @@ export default function App() {
     const json = await response.json();
     setDailyWeatherData(json);
     setLoadingDailyWeatherData(false);
-    console.log(`DAILY API CALLED!`)
   }
   
   

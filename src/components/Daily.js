@@ -35,7 +35,7 @@ const handleClick = (index) => {
             i > 0 && i < 8 && 
             <div className='daily-weather' key={i} onClick={() => handleClick(i)}>
                 <p className='daily-day'>{weekday}</p>
-                <img className='daily-weather-icon' src={`http://openweathermap.org/img/wn/${el.weather[0].icon}.png`} />
+                <img className='daily-weather-icon' alt="weather icon"src={`http://openweathermap.org/img/wn/${el.weather[0].icon}.png`} />
                 <p className='daily-temp-desc'>{clicked[i]? capitalize(el.weather[0].description) : capitalize(el.weather[0].main)}</p>
                 <p className='daily-temp-desc'>{Math.round(el.temp.day)}°</p>
                 {
@@ -43,33 +43,36 @@ const handleClick = (index) => {
                   <div className='daily-more-info-row-container'>
                   <br />
                     <div className='daily-more-info-row'>
-                      <img src={require('../images/wind.png')} className="daily-sunrise-sunset-icon"/> 
+                      <img src={require('../images/wind.png')} alt="wind icon" className="daily-sunrise-sunset-icon"/> 
                       <p className='daily-sunrise-sunset-time'>{Math.round(el.wind_speed)}mph</p> 
                     </div>
 
                     <div className='daily-more-info-row'>
-                      <img src={require('../images/humidity.png')} className="daily-sunrise-sunset-icon"/> 
+                      <img src={require('../images/humidity.png')} alt="humidity icon" className="daily-sunrise-sunset-icon"/> 
                       <p className='daily-sunrise-sunset-time'>{el.humidity}%</p>
                     </div>
+                    
+                    {/* Conditionally rendering snow and rain fall. These only populate if snow or rain are forecasted.
+                        We check to see if the entry is there "!!el.rain" and "!!el.snow" respectively, if so, we display the forecast */}
                     { !!el.rain &&
                     <div className='daily-more-info-row'>
-                      <img src={require('../images/rain.png')} className="daily-sunrise-sunset-icon"/> 
+                      <img src={require('../images/rain.png')} alt="rain icon" className="daily-sunrise-sunset-icon"/> 
                       <p className='daily-sunrise-sunset-time'>{el.rain.toFixed(1)}mm</p>
                     </div>
                     }
                     { !!el.snow &&
                     <div className='daily-more-info-row'>
-                      <img src={require('../images/snow.png')} className="daily-sunrise-sunset-icon"/> 
+                      <img src={require('../images/snow.png')} alt="snow icon" className="daily-sunrise-sunset-icon"/> 
                       <p className='daily-sunrise-sunset-time'>{el.snow.toFixed(1)}mm</p>
                     </div>
                     }
                     <div className='daily-more-info-row'>
-                      <img src={require('../images/sunrise.png')} className="daily-sunrise-sunset-icon"/> 
+                      <img src={require('../images/sunrise.png')} alt="sunrise icon" className="daily-sunrise-sunset-icon"/> 
                       <p className='daily-sunrise-sunset-time'>{formatAMPM(new Date(el.sunrise * 1000))}</p>
                     </div>
 
                     <div className='daily-more-info-row'>
-                      <img src={require('../images/sunset.png')} className="daily-sunrise-sunset-icon"/> 
+                      <img src={require('../images/sunset.png')} alt="sunset icon" className="daily-sunrise-sunset-icon"/> 
                       <p className='daily-sunrise-sunset-time'>{formatAMPM(new Date(el.sunset * 1000))}</p>
                     </div>
                     

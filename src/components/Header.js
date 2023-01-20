@@ -43,7 +43,7 @@ export default function Header(props) {
                 <p className='weather-container-header'></p>
                 <form onSubmit={handleSubmit}>
                     <input type="text" placeholder='Duluth MN' onChange={handleChange} value={formData} />
-                    {loading ? <img src={require("../images/loading.png")} className="search-loading"/> : <button type='submit' className='material-symbols-outlined'>search</button>}
+                    {loading ? <img alt='loading icon' src={require("../images/loading.png")} className="search-loading"/> : <button type='submit' className='material-symbols-outlined'>search</button>}
                 </form>
             </div>
             }

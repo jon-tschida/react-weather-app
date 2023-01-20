@@ -25,7 +25,7 @@ export default function Weather(props) {
         <div className='whole-weather-container'>
             <div className='weather-container-header-container'>
                 <h1 className={`${locationData.locations[0].formattedAddress.length > 12 ? 'weather-container-header-small' : 'weather-container-header'}`}>{locationData.locations[0].formattedAddress}</h1>
-                <img className='weather-header-icon' src={`http://openweathermap.org/img/wn/${weatherData.weather[0].icon}@4x.png`} />
+                <img className='weather-header-icon' alt='weather icon' src={`http://openweathermap.org/img/wn/${weatherData.weather[0].icon}@4x.png`} />
                 <div className='high-low-main-temp-container'>
                     <p className='weather-main-temp'>{Math.round(weatherData.main.temp)}°</p>
                     <p className='weather-min-high'>{Math.round(weatherData.main.temp_min)}° {Math.round(weatherData.main.temp_max)}°</p>    
@@ -45,12 +45,28 @@ export default function Weather(props) {
                     </div>
                     <div className='weather-info-row'>
                         <p>Wind</p> 
-                        <p>{Math.round(weatherData.wind.speed)} mph <img style={{maxHeight: `15px`, transform: `rotate(${Math.round(weatherData.wind.deg)}deg)`}} src={require("../images/arrow.png")} /></p>
+                        <p>{Math.round(weatherData.wind.speed)} mph <img alt="wind direction icon" style={{maxHeight: `15px`, transform: `rotate(${Math.round(weatherData.wind.deg)}deg)`}} src={require("../images/arrow.png")} /></p>
                     </div>
                     <div className='weather-info-row'>
                         <p>Clouds</p> 
                         <p>{Math.round(weatherData.clouds.all)}%</p>
                     </div>
+                    {/* Conditionally rendering snow and rain fall. These only populate if snow or rain are forecasted.
+                        We check to see if the entry is there "!!weatherData.rain" and "!!weatherData.snow" respectively, if so, we display the forecast */}
+                    {!!weatherData.rain && 
+                    <div className='weather-info-row'>
+                        <p>1h Rainfall</p> 
+                        <p>{weatherData.rain["1h"]}mm</p>
+                    </div>
+                    }
+                    {!!weatherData.snow && 
+                    <div className='weather-info-row'>
+                        <p>1h Snow</p> 
+                        <p>{weatherData.snow["1h"]}mm</p>
+                    </div>
+                    }
+
+
                     <div className='weather-info-row'>
                         <p>Sunrise</p> 
                         <p>{`${formatAMPM (new Date(weatherData.sys.sunrise * 1000))}`}</p>
