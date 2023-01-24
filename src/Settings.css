@@ -1,0 +1,55 @@
+.settings{
+    padding: 10px;
+    left: 5%;
+    position: absolute;
+    width: 150px;
+    max-height: 55px;
+    transition: max-height 800ms ease-in-out;
+    overflow: hidden;
+}
+.open{
+    padding: 10px;
+    left: 5%;
+    position: absolute;
+    width: 150px;
+    max-height: 500px;
+    transition: max-height 1000ms ease-in-out;
+    overflow: hidden;
+}
+
+.close-menu{
+    user-select: none;
+    color: rgb(0, 0, 0);
+    border-radius: 50%;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 5px #4d4d4d;
+    cursor: pointer;
+    transition: transform 50ms ease-in-out;
+    padding: 5px;
+}
+.close-menu:hover{
+    transform: scale(1.1, 1.1);
+    transition: transform 50ms ease-in-out;
+}
+
+.settings-menu > ul {
+    padding: 20px 0px 20px 0px;
+    list-style: none;
+    line-height: 50px;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 5px #4d4d4d;
+    border-radius: 5px;
+}
+
+ul > li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
+li > button{
+    cursor: pointer;
+}
+.f-or-c{
+    cursor: pointer;
+}
