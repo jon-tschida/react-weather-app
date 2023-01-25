@@ -15,7 +15,7 @@ export default function Settings() {
         <div className='settings-menu'>
         <br />
             <ul>
-                <li><button>Change Location</button></li>
+                <li><button>New Location <span className="material-symbols-outlined location-pin">location_on</span></button></li>
                 <li>F<span className="material-symbols-outlined f-or-c">toggle_off</span>C</li>
                 <li>mph<span className="material-symbols-outlined f-or-c">toggle_off</span>kph</li>
             </ul>

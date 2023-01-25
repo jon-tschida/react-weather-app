@@ -42,7 +42,7 @@ export default function Hourly(props) {
                         { !!el.rain &&
                             <div className='daily-more-info-row'>
                                 <img src={require('../images/rain.png')} alt="rain icon" className="daily-sunrise-sunset-icon"/> 
-                                <p className='daily-sunrise-sunset-time'>{el.rain["1h"]}</p>
+                                <p className='daily-sunrise-sunset-time'>{el.rain["1h"]} mm</p>
                             </div>
                         }
                         { !!el.snow &&

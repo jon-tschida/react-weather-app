@@ -9,6 +9,9 @@
 body{
   background-color: #fafafa;
 }
+.beegmode{
+  padding-top: 50px;
+}
 .divider{
 border: 1px solid black;
 height: 15rem;
@@ -98,8 +101,7 @@ form > button{
  background-color: #ffffff;
  border-radius: 15px;
  box-shadow: 0px 0px 10px #4d4d4d;
-
- width: 30%;
+ width: 35%;
  height: fit-content;
  margin: auto;
  display: flex;

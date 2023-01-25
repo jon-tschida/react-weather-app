@@ -48,7 +48,29 @@ ul > li {
     user-select: none;
 }
 li > button{
+    display: flex;
+    align-items: center;
+
+    font-family: 'Lato', sans-serif;
     cursor: pointer;
+    padding: 5px;
+    border-radius: 10px;
+
+    background-color: #e5ebed;
+    border: 1px solid #4d4d4d;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5);
+    transition: background-color 200ms ease-in-out;
+}
+li > button:hover{
+    background-color: #caccce;
+    transition: background-color 200ms ease-in-out;
+}
+li > button:active{
+    transform: translate(0px, 2px);
+    box-shadow: 0px 0px 0px black;
+}
+.location-pin{
+    font-size: 15px;
 }
 .f-or-c{
     cursor: pointer;
