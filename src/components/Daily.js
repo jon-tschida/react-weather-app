@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Daily(props) {
 
-  const {dailyWeatherData, capitalize, formatAMPM} = props
+  const {dailyWeatherData, capitalize, formatAMPM, convertToCelcius, convertToKph, toggle} = props
   const [clicked, setClicked] = React.useState({
     0: false,
     1: false,
@@ -37,14 +37,14 @@ const handleClick = (index) => {
                 <p className='daily-day'>{weekday}</p>
                 <img className='daily-weather-icon' alt="weather icon"src={`http://openweathermap.org/img/wn/${el.weather[0].icon}.png`} />
                 <p className='daily-temp-desc'>{clicked[i]? capitalize(el.weather[0].description) : capitalize(el.weather[0].main)}</p>
-                <p className='daily-temp-desc'>{Math.round(el.temp.day)}°</p>
+                <p className='daily-temp-desc'>{toggle["F_or_C"] ? Math.round(el.temp.day) : convertToCelcius(el.temp.day)}°</p>
                 {
                   clicked[i] && 
                   <div className='daily-more-info-row-container'>
                   <br />
                     <div className='daily-more-info-row'>
                       <img src={require('../images/wind.png')} alt="wind icon" className="daily-sunrise-sunset-icon"/> 
-                      <p className='daily-sunrise-sunset-time'>{Math.round(el.wind_speed)}mph</p> 
+                      <p className='daily-sunrise-sunset-time'>{toggle["mph_or_kph"] ? `${Math.round(el.wind_speed)} mph` : `${convertToKph(el.wind_speed)} kph`}</p> 
                     </div>
 
                     <div className='daily-more-info-row'>

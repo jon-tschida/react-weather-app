@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Hourly(props) {
 
-    const {dailyWeatherData, formatAMPM, capitalize} = props;
+    const {dailyWeatherData, formatAMPM, capitalize, toggle, convertToCelcius} = props;
 
     const [clicked, setClicked] = React.useState({
         1: false,
@@ -30,7 +30,7 @@ export default function Hourly(props) {
                     index > 0 && index < 7 && 
                     <div className="hourly-weather" onClick={() => handleClick(index)} key={index}>
                         <p className='hour'>{formatAMPM(new Date(el.dt * 1000))}</p>
-                        <p className='hourly-temp'>{Math.round(el.temp)}°</p>
+                        <p className='hourly-temp'>{toggle["F_or_C"] ? Math.round(el.temp) : convertToCelcius(el.temp)}°</p>
                     
                         { clicked[index] &&
                         <>

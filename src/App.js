@@ -51,7 +51,7 @@ export default function App() {
 
   return (
     <div className='beegmode'>
-      <Settings />
+      {/* <Settings /> */}
       {/* <Header setLocationData={setLocationData} setLoaded={setLoaded} locationData={locationData} loaded={loaded}/>  */}
       <div> {loadingWeatherData ? <Header setLocationData={setLocationData} setLoaded={setLoaded} locationData={locationData} loaded={loaded}/>  : <Weather weatherData={weatherData} locationData={locationData} dailyWeatherData={dailyWeatherData} loadingDailyWeatherData={loadingDailyWeatherData}/> } </div> 
     </div>
