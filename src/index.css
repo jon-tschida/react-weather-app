@@ -8,12 +8,15 @@
 
 body{
   background-color: #fafafa;
+  background-image: url("./images/clouds.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .beegmode{
   padding-top: 50px;
 }
 .divider{
-border: 1px solid black;
+/* border: 1px solid black; */
 height: 15rem;
 border-radius: 50%;
 margin: 0px 15px 0px 15px;
@@ -98,9 +101,10 @@ form > button{
 
 .whole-weather-container{
  padding: 1%;
- background-color: #ffffff;
+ color: white;
+ background-color: rgba(255, 255, 255, 0.2);
  border-radius: 15px;
- box-shadow: 0px 0px 10px #4d4d4d;
+ box-shadow: 0px 0px 10px #000000;
  width: 35%;
  height: fit-content;
  margin: auto;
@@ -146,13 +150,13 @@ form > button{
 .weather-main-temp{
   text-align: center;
   font-family: 'Lato', sans-serif;
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: 300;
 }
 
 .weather-min-high{
   text-align: center;
-  font-size: 1rem;
+  font-size: 2rem;
 }
 
 .weather-main-description{
@@ -199,6 +203,7 @@ form > button{
   height: 150px;
 }
 .daily-weather{
+  color: white;
   box-shadow: 0px 0px 5px black;
   width: 100px;
   height: fit-content;
@@ -208,7 +213,7 @@ form > button{
   flex-direction: column;
   align-items: center;
   font-family: 'Lato', sans-serif;
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.2);
   transition: transform 150ms ease-in-out;
 }
 .daily-weather:hover{
@@ -226,10 +231,10 @@ form > button{
 }
 
 .daily-weather-icon{
-  /* border: 1px black; */
+  border: 2px;
   border-style: outset;
   border-radius: 50%;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(110, 164, 245, 0.2);
   max-width: 50px;
 }
 
@@ -266,6 +271,7 @@ form > button{
   user-select: none;
 }
 .hourly-weather{
+  color: white;
   box-shadow: 0px 0px 5px black;
   width: 100px;
   height: fit-content;
@@ -276,7 +282,7 @@ form > button{
   align-items: center;
   justify-content: center;
   font-family: 'Lato', sans-serif;
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.2);
 
   cursor: pointer;
   transition: transform 150ms ease-in-out;

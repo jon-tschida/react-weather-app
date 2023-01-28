@@ -27,7 +27,9 @@ export default function Header(props) {
         }
 
         // Only ping the API if the search-field isn't empty. If it is, we alert the user. 
-        if (formData.length > 0) fetchData();
+        if (formData.length > 0) {
+            fetchData();
+        }
         else alert("Search field can't be empty")
 
     }

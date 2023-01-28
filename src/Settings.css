@@ -21,7 +21,7 @@
     user-select: none;
     color: rgb(0, 0, 0);
     border-radius: 50%;
-    background-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.2);
     box-shadow: 0px 0px 5px #4d4d4d;
     cursor: pointer;
     transition: transform 50ms ease-in-out;
@@ -33,11 +33,12 @@
 }
 
 .settings-menu > ul {
+    color: rgb(255, 255, 255);
     padding: 20px 0px 20px 0px;
     list-style: none;
     line-height: 50px;
-    background-color: #ffffff;
-    box-shadow: 0px 0px 5px #4d4d4d;
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 0px 5px #000000;
     border-radius: 5px;
 }
 

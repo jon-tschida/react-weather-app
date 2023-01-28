@@ -19,7 +19,7 @@ const convertToKph = (wind) => Math.round(wind * 1.609)
 
 export default function Weather(props) {
 
-    const {weatherData, locationData, dailyWeatherData, loadingDailyWeatherData} = props;
+    const {weatherData, locationData, dailyWeatherData, loadingDailyWeatherData, setChangeLocation, setLoadingWeatherData} = props;
 
     const [toggle, setToggle] = React.useState({
         F_or_C: true,
@@ -31,7 +31,7 @@ export default function Weather(props) {
   
     return (
     <div>
-        <Settings toggle={toggle} setToggle={setToggle}/>
+        <Settings toggle={toggle} setToggle={setToggle} setChangeLocation={setChangeLocation} setLoadingWeatherData={setLoadingWeatherData}/>
         <div className='whole-weather-container'>
             <div className='weather-container-header-container'>
                 <h1 className={`${locationData.locations[0].formattedAddress.length > 12 ? 'weather-container-header-small' : 'weather-container-header'}`}>{locationData.locations[0].formattedAddress}</h1>
