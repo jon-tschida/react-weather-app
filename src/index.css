@@ -134,8 +134,10 @@ form > button{
 
 .weather-header-icon{
  width: 50%;
+ border-radius: 50%;
  margin: auto;
  max-width: fit-content;
+ background-color: rgba(110, 164, 245, 0.2);
 }
 
 .high-low-main-temp-container{
