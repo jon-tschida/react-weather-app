@@ -35,6 +35,7 @@ export default function Header(props) {
     }
   return (
     <div className='header-container'>
+        <div className='header-welcome-text'>{loading ? `loading weather data...` : `Enter a city to get started`}</div>
         <div className='header-form-div'>
             {
             props.loaded 
