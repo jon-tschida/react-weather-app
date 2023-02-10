@@ -325,82 +325,85 @@ form > button{
 
 /* Media queries for styling smaller screens */
 
+@media screen and (max-width: 1500px) and (min-width: 451px) {
+  .daily-weather-container{
+    margin-bottom: 200px;
+  }
+
+}
+
 @media screen and (max-width: 450px) {
-
-  /* Main Weather info */
+  .daily-weather-container{
+    margin-bottom: 200px;
+  }
+  /* Weather info styling */
   .whole-weather-container{
-    width: 95%;
-   }
-  .weather-container-header{
-    font-size: 2rem;
-  }
-  .weather-container-header-small{
-    font-size: 1rem;
-  }
-  
-  .weather-header-icon{
-   width: 40%;
-  }
-  
-  .high-low-main-temp-container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Lato', sans-serif;
-    font-weight: 300;
-  }
-  
-  .weather-main-temp{
-    font-size: 2rem;
-  }
-  
-  .weather-min-high{
-    font-size: 1rem;
-  }
-  
-  .weather-main-description{
-    font-size: 1.5rem;
-  }
-  
-  .weather-info{
-    font-size: 1rem;
-  }
-  /* END Main Weather info */
+  width: 95%;
+  margin-bottom: 25px;
+ }
 
-/* Hourly Weather */
+ .weather-container-header{
+   font-size: 1.5rem;
+ }
+ .weather-container-header-small{
+   font-size: 1rem;
+ }
+ 
+ .weather-header-icon{
+  width: 40%;
+ }
+ 
+ .high-low-main-temp-container{
+   font-weight: 300;
+ }
+ 
+ .weather-main-temp{
+   font-size: 2rem;
+   font-weight: 300;
+ }
+ 
+ .weather-min-high{
+   font-size: 1rem;
+ }
+ 
+ .weather-main-description{
+   font-size: 1.5rem;
+ }
+ /* End Weather info styling */
+
+ /* Hourly Weather */
 
 .hourly-weather-container{
-  justify-content:flex-start;
-  padding-top: 5%;
-  width: 100%;
-  border: 1px black solid;
-  overflow-x: scroll;
+  display: flex;
+  flex-direction: row;
+  /* width: 100%; */
+  width: fit-content;
+  /* overflow-x: auto; */
+  justify-content: center;
 }
 .hourly-weather{
-  border: 1px solid beige;
-  padding: 10px;
-  margin-left: 5px;
   margin-right: 5px;
-  /* width: 00px; */
+  margin-left: 5px;
+  padding: 10px;
+  width: 75px;
+  height: fit-content;
 
-  cursor: pointer;
+  transition: transform 150ms ease-in-out;
 }
 
 .hour{
   font-weight: 300;
-  font-size: 20px;
+  font-size: 12px;
 }
 
 .hourly-temp-desc{
   font-weight: 300;
-  font-size: 10px;
+  font-size: 12px;
   text-align: center;
 }
 
 .hourly-temp{
   font-weight: 400;
-  font-size: 10px;
 }
 
 /* End Hourly Weather */
