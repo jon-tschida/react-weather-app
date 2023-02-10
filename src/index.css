@@ -204,8 +204,6 @@ form > button{
 
 /* daily Weather */
 .daily-weather-container{
-  /* position: fixed; */
-  /* right: 20%; */
   margin: auto;
   margin-top: 1%;
   width: 60%;
@@ -377,8 +375,8 @@ form > button{
   display: flex;
   flex-direction: row;
   /* width: 100%; */
-  width: fit-content;
-  /* overflow-x: auto; */
+  width: 350px;
+  overflow-x: auto;
   justify-content: center;
 }
 .hourly-weather{

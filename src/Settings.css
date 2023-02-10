@@ -43,6 +43,7 @@
 }
 
 ul > li {
+    font-family: 'Lato', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -75,4 +76,19 @@ li > button:active{
 }
 .f-or-c{
     cursor: pointer;
+}
+
+@media screen and (max-width: 450px){
+    .settings{
+        left: 0px;
+        top: 0px;
+        position: absolute;
+    }
+    .settings-menu > ul {
+        background-color: rgba(255, 255, 255, 1);
+    }
+    ul > li {
+        color: black;
+    }
+
 }
