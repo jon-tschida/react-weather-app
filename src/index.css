@@ -330,7 +330,24 @@ form > button{
 
 }
 
+/* Media queries for phones */
+
 @media screen and (max-width: 450px) {
+
+  body{
+    background-size: auto;
+  }
+
+  /* Form */
+  form{
+    width: 100%;
+  }
+  form > input{
+    font-family: 'Lato', sans-serif;
+  }
+
+    /* END Form */
+
   .daily-weather-container{
     margin-bottom: 200px;
   }
