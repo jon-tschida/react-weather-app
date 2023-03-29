@@ -1,2 +1,2 @@
-# Weather app with React
+# Weather app built with React
 
