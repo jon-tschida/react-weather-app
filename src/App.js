@@ -14,7 +14,7 @@ export default function App() {
   const [loadingWeatherData, setLoadingWeatherData] = React.useState(true);
   const [loadingDailyWeatherData, setLoadingDailyWeatherData] = React.useState(true)
   const [dailyWeatherData, setDailyWeatherData] = React.useState()
-  const [locationData, setLocationData] = React.useState()
+  const [locationData, setLocationData] = React.useState([])
   
   
   
@@ -43,7 +43,7 @@ export default function App() {
         fetchDailyWeatherData();
         fetchWeatherData();
       }   
-  }, [loaded]) // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [loaded, locationData.locations])
 
   
   // Debugging stuff:
